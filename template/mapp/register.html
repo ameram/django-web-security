@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "mapp/base.html" %}
+{% load staticfiles %}
+
+
+{% block body_block %}
+<div class="jumbotron">
+    {% if registered %}
+        <h1>Thank You</h1>
+    {% else %}
+    <h1>register here</h1>
+    <h4>Fill out the form</h4>
+    <form enctype="multipart/form-data" method="POST">
+        {% csrf_token%}
+        {{user_form.as_p}}
+        {{ profile_form.as_p }}
+        <input type="submit" value="Submit!" name="sub_btn">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

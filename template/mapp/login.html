@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "mapp/base.html" %}
+{% block body_block%}
+
+<div class="container">
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="Username">Username:</label>
+        <input type="text" name="Username" placeholder="Enter  Username">
+        <label for="Password">Password:</label>
+        <input type="password" name="Password">
+        <input type="submit" name="" value="Login">
+    </form>
+</div>
+{% endblock%}
